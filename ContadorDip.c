@@ -9,9 +9,11 @@ void main (void)
    int16 conteod;
    int16 conteoc;
    int16 conteob;
+   int contador;
    //8 4 2 1 || 8 4 2 1
    while(1)
    {
+   
    //Puerto B
    for(conteob=1; conteob<=128 ; conteob*=2)
    {
