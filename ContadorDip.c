@@ -6,36 +6,45 @@
 
 void main (void)
 {
-   int16 conteod;
-   int16 conteoc;
-   int16 conteob;
-   int contador;
+   set_tris_a(0x3f);
+   set_tris_b(0x00);
+   set_tris_c(0x00);
+   set_tris_d(0x00);
+   
+   int conteoB=0x01, conteoC=0, conteoD=0, flagopcionB=0, flagopcionC=0, flagopcionD=0;
+   int puertoA=input_a();
    //8 4 2 1 || 8 4 2 1
    while(1)
    {
-   
-   //Puerto B
-   for(conteob=1; conteob<=128 ; conteob*=2)
-   {
-      output_b(conteob);
-      delay_ms(200);
+      
+      /*if(input(pin_a0)&&input(pin_a3))
+      {
+         flagopcionB=1;
+         conteoB*=2;
+         output_b(conteoB);
+         delay_ms(100);
+         
+      }*/
+      //PuertoB
+      if((PuertoA&0x01)==0x01)
+      {
+         flagopcionB=1;
+      }
+      else
+      {
+         flagopcionB=0;
+      }
+      if(flagopcionB==1)
+      {
+         
+  
+      }
+      
+      
+      
+      
+      
    }
-   //Puerto C
-   for(conteoc=128; conteoc>=1; conteoc/=2)
-   {
-      output_c(conteoc);
-      delay_ms(200);
-   }
-   
-   //Puerto D
-   for(conteod=3;conteod<=256;conteod*=4)
-   {
-       output_d(conteod);
-       delay_ms(200);
-   }
-   
-   }
-   
    
    
    
